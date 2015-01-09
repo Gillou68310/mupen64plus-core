@@ -456,9 +456,11 @@ ifneq ($(DYNAREC), )
   ifeq ($(NEW_DYNAREC), 1)
     ifeq ($(DYNAREC), x86)
       CFLAGS += -DNEW_DYNAREC=1
+      SOURCE += $(SRCDIR)/r4300/new_dynarec/linkage_x86.asm
     else
       ifeq ($(DYNAREC), arm)
         CFLAGS += -DNEW_DYNAREC=3
+        SOURCE += $(SRCDIR)/r4300/new_dynarec/linkage_arm.S
       else
         $(error NEW_DYNAREC is only supported on 32 bit x86 and 32 bit armel)
       endif
@@ -466,7 +468,6 @@ ifneq ($(DYNAREC), )
 
     SOURCE += \
       $(SRCDIR)/r4300/empty_dynarec.c \
-      $(SRCDIR)/r4300/new_dynarec/linkage_$(DYNAREC).S \
       $(SRCDIR)/r4300/new_dynarec/new_dynarec.c
   else
     SOURCE += \
