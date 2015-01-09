@@ -43,10 +43,10 @@ extern unsigned char *PIF_RAMb;
 
 extern ALIGN(16, unsigned int rdram[0x800000/4]);
 
-extern unsigned int address, word;
+extern unsigned int address, cpu_word;
 extern unsigned char cpu_byte;
-extern unsigned short hword;
-extern unsigned long long dword, *rdword;
+extern unsigned short cpu_hword;
+extern unsigned long long cpu_dword, *rdword;
 
 extern void (*readmem[0x10000])(void);
 extern void (*readmemb[0x10000])(void);
