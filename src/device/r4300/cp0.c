@@ -27,9 +27,9 @@
 #include "new_dynarec/new_dynarec.h"
 #include "recomp.h"
 
-#ifdef COMPARE_CORE
+/*#ifdef COMPARE_CORE
 #include "api/debugger.h"
-#endif
+#endif*/
 
 #ifdef DBG
 #include "debugger/dbg_debugger.h"
@@ -143,10 +143,10 @@ void cp0_update_count(struct r4300_core* r4300)
         cp0_regs[CP0_COUNT_REG] = *r4300_cp0_next_interrupt(cp0) + *r4300_cp0_cycle_count(cp0);
 #endif
 
-#ifdef COMPARE_CORE
+/*#ifdef COMPARE_CORE
    if (r4300->delay_slot)
      CoreCompareCallback();
-#endif
+#endif*/
 /*#ifdef DBG
    if (g_DebuggerActive && !r4300->delay_slot) update_debugger(*r4300_pc(r4300));
 #endif

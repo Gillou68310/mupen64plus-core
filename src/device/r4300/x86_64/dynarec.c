@@ -141,11 +141,11 @@ static void gencp0_update_count(struct r4300_core* r4300, unsigned int addr)
     mul_reg32(EDX);
     add_m32rel_xreg32((unsigned int*)(&r4300_cp0_regs(&r4300->cp0)[CP0_COUNT_REG]), EAX);
     add_m32rel_xreg32((unsigned int*)(r4300_cp0_cycle_count(&r4300->cp0)), EAX);
-#else
+/*#else
     mov_reg64_imm64(RAX, (unsigned long long) (r4300->recomp.dst+1));
     mov_m64rel_xreg64((unsigned long long *)(&(*r4300_pc_struct(r4300))), RAX);
     mov_reg64_imm64(RAX, (unsigned long long)dynarec_cp0_update_count);
-    call_reg64(RAX);
+    call_reg64(RAX);*/
 #endif
 }
 
@@ -211,9 +211,9 @@ static void ld_register_alloc(struct r4300_core* r4300, int *pGpr1, int *pGpr2, 
 {
     int gpr1, gpr2, base1, base2 = 0;
 
-#ifdef COMPARE_CORE
+/*#ifdef COMPARE_CORE
     free_registers_move_start(r4300); // to maintain parity with 32-bit core
-#endif
+#endif*/
 
     if (r4300->recomp.dst->f.i.rs == r4300->recomp.dst->f.i.rt)
     {
@@ -252,9 +252,9 @@ static void ld_register_alloc2(struct r4300_core* r4300, int *pGpr1, int *pGpr2,
 {
     int gpr1, gpr2, base1, base2;
 
-#ifdef COMPARE_CORE
+/*#ifdef COMPARE_CORE
     free_registers_move_start(r4300); // to maintain parity with 32-bit core
-#endif
+#endif*/
 
     base2 = lock_register(r4300, ECX); // make sure we get ECX for base2
 
@@ -293,8 +293,8 @@ static void ld_register_alloc2(struct r4300_core* r4300, int *pGpr1, int *pGpr2,
     assert(base2 == RCX);
 }
 
-#ifdef COMPARE_CORE
-extern unsigned int op; /* api/debugger.c */
+/*#ifdef COMPARE_CORE
+extern unsigned int op;
 
 void gendebug(struct r4300_core* r4300)
 {
@@ -327,7 +327,7 @@ void gendebug(struct r4300_core* r4300)
     mov_reg64_preg64pimm8(RBX, RAX,  8);
     mov_reg64_preg64(RAX, RAX);
 }
-#endif
+#endif*/
 
 void genni(struct r4300_core* r4300)
 {

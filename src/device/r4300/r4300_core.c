@@ -36,6 +36,7 @@
 #endif
 #include "main/main.h"
 
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
@@ -299,6 +300,14 @@ uint32_t *fast_mem_access(struct r4300_core* r4300, uint32_t address)
  */
 int r4300_read_aligned_word(struct r4300_core* r4300, uint32_t address, uint32_t* value)
 {
+#ifdef COMPARE_CORE
+    opc = 1;
+    if (*r4300_pc_struct(r4300) != NULL || (r4300->emumode == EMUMODE_DYNAREC))
+    {
+        cp0_update_count(r4300);
+        CoreCompareCallback();
+    }
+#endif
     if ((address & UINT32_C(0xc0000000)) != UINT32_C(0x80000000)) {
         address = virtual_to_physical_address(r4300, address, 0);
         if (address == 0) {
@@ -316,6 +325,14 @@ int r4300_read_aligned_word(struct r4300_core* r4300, uint32_t address, uint32_t
 /* Read aligned dword from memory */
 int r4300_read_aligned_dword(struct r4300_core* r4300, uint32_t address, uint64_t* value)
 {
+#ifdef COMPARE_CORE
+    opc = 2;
+    if (*r4300_pc_struct(r4300) != NULL || (r4300->emumode == EMUMODE_DYNAREC))
+    {
+        cp0_update_count(r4300);
+        CoreCompareCallback();
+    }
+#endif
     uint32_t w[2];
 
     /* XXX: unaligned dword accesses should trigger a address error,
@@ -349,6 +366,14 @@ int r4300_read_aligned_dword(struct r4300_core* r4300, uint32_t address, uint64_
  */
 int r4300_write_aligned_word(struct r4300_core* r4300, uint32_t address, uint32_t value, uint32_t mask)
 {
+#ifdef COMPARE_CORE
+    opc = 3;
+    if (*r4300_pc_struct(r4300) != NULL || (r4300->emumode == EMUMODE_DYNAREC))
+    {
+        cp0_update_count(r4300);
+        CoreCompareCallback();
+    }
+#endif
     if ((address & UINT32_C(0xc0000000)) != UINT32_C(0x80000000)) {
 
         invalidate_r4300_cached_code(r4300, address, 4);
@@ -371,6 +396,14 @@ int r4300_write_aligned_word(struct r4300_core* r4300, uint32_t address, uint32_
 /* Write aligned dword to memory */
 int r4300_write_aligned_dword(struct r4300_core* r4300, uint32_t address, uint64_t value, uint64_t mask)
 {
+#ifdef COMPARE_CORE
+    opc = 4;
+    if (*r4300_pc_struct(r4300) != NULL || (r4300->emumode == EMUMODE_DYNAREC))
+    {
+        cp0_update_count(r4300);
+        CoreCompareCallback();
+    }
+#endif
     /* XXX: unaligned dword accesses should trigger a address error,
      * but inaccurate timing of the core can lead to unaligned address on reset
      * so just emit a warning and keep going */

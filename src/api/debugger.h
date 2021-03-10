@@ -37,6 +37,8 @@ typedef enum {
     DEBUG_CORE_COMPARE
   } eDbgCallbackType;
 
+extern unsigned int opc;
+
 /* Functions for use by the Core, to send information back to the front-end app */
 extern int DebuggerCallbacksAreSet(void);
 extern void DebuggerCallback(eDbgCallbackType type, unsigned int param);

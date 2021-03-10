@@ -130,10 +130,10 @@ static void gencp0_update_count(struct r4300_core* r4300, unsigned int addr)
     mul_reg32(EDX);
     add_m32_reg32((unsigned int*)(&r4300_cp0_regs(&r4300->cp0)[CP0_COUNT_REG]), EAX);
     add_m32_reg32((unsigned int*)r4300_cp0_cycle_count(&r4300->cp0), EAX);
-#else
+/*#else
     mov_m32_imm32((unsigned int*)(&(*r4300_pc_struct(r4300))), (unsigned int)(r4300->recomp.dst+1));
     mov_reg32_imm32(EAX, (unsigned int)dynarec_cp0_update_count);
-    call_reg32(EAX);
+    call_reg32(EAX);*/
 #endif
 }
 
@@ -180,8 +180,8 @@ static void gendelayslot(struct r4300_core* r4300)
     mov_m32_imm32(&r4300->delay_slot, 0);
 }
 
-#ifdef COMPARE_CORE
-extern unsigned int op; /* api/debugger.c */
+/*#ifdef COMPARE_CORE
+extern unsigned int op;
 
 void gendebug(struct r4300_core* r4300)
 {
@@ -210,7 +210,7 @@ void gendebug(struct r4300_core* r4300)
     mov_reg32_m32(ESI, (unsigned int*)&r4300->recomp.esi);
     mov_reg32_m32(EDI, (unsigned int*)&r4300->recomp.edi);
 }
-#endif
+#endif*/
 
 void genni(struct r4300_core* r4300)
 {

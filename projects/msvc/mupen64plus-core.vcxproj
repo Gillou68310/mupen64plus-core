@@ -797,7 +797,7 @@
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <CharacterSet>MultiByte</CharacterSet>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <OutDir>$(SolutionDir)$(Platform)\Release\</OutDir>
     <IntDir>$(Platform)\$(Configuration)\</IntDir>
     <TargetName>mupen64plus</TargetName>
   </PropertyGroup>
@@ -805,7 +805,7 @@
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <CharacterSet>MultiByte</CharacterSet>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <OutDir>$(SolutionDir)$(Platform)\Release\</OutDir>
     <IntDir>$(Platform)\$(Configuration)\</IntDir>
     <TargetName>mupen64plus</TargetName>
   </PropertyGroup>
@@ -813,7 +813,7 @@
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <CharacterSet>MultiByte</CharacterSet>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <OutDir>$(SolutionDir)$(Platform)\Release\</OutDir>
     <IntDir>$(Platform)\$(Configuration)\</IntDir>
     <TargetName>mupen64plus</TargetName>
   </PropertyGroup>
@@ -821,63 +821,63 @@
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <CharacterSet>MultiByte</CharacterSet>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <OutDir>$(SolutionDir)$(Platform)\Release\</OutDir>
     <IntDir>$(Platform)\$(Configuration)\</IntDir>
     <TargetName>mupen64plus</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <CharacterSet>MultiByte</CharacterSet>
-    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <OutDir>$(SolutionDir)$(Platform)\Debug\</OutDir>
     <IntDir>$(Platform)\$(Configuration)\</IntDir>
     <TargetName>mupen64plus</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <CharacterSet>MultiByte</CharacterSet>
-    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <OutDir>$(SolutionDir)$(Platform)\Debug\</OutDir>
     <IntDir>$(Platform)\$(Configuration)\</IntDir>
     <TargetName>mupen64plus</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='New_Dynarec_Debug|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <CharacterSet>MultiByte</CharacterSet>
-    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <OutDir>$(SolutionDir)$(Platform)\Debug\</OutDir>
     <IntDir>$(Platform)\$(Configuration)\</IntDir>
     <TargetName>mupen64plus</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='x86_New_Dynarec_Debug|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <CharacterSet>MultiByte</CharacterSet>
-    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <OutDir>$(SolutionDir)$(Platform)\Debug\</OutDir>
     <IntDir>$(Platform)\$(Configuration)\</IntDir>
     <TargetName>mupen64plus</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ARM_New_Dynarec_Debug|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <CharacterSet>MultiByte</CharacterSet>
-    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <OutDir>$(SolutionDir)$(Platform)\Debug\</OutDir>
     <IntDir>$(Platform)\$(Configuration)\</IntDir>
     <TargetName>mupen64plus</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='New_Dynarec_Debug|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <CharacterSet>MultiByte</CharacterSet>
-    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <OutDir>$(SolutionDir)$(Platform)\Debug\</OutDir>
     <IntDir>$(Platform)\$(Configuration)\</IntDir>
     <TargetName>mupen64plus</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ARM64_New_Dynarec_Debug|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <CharacterSet>MultiByte</CharacterSet>
-    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <OutDir>$(SolutionDir)$(Platform)\Debug\</OutDir>
     <IntDir>$(Platform)\$(Configuration)\</IntDir>
     <TargetName>mupen64plus</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='x64_New_Dynarec_Debug|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <CharacterSet>MultiByte</CharacterSet>
-    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <OutDir>$(SolutionDir)$(Platform)\Debug\</OutDir>
     <IntDir>$(Platform)\$(Configuration)\</IntDir>
     <TargetName>mupen64plus</TargetName>
   </PropertyGroup>
@@ -925,7 +925,7 @@
     <ClCompile>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>..\..\src;..\..\subprojects\md5;..\..\subprojects\minizip;..\..\subprojects\oglft;..\..\subprojects\xxhash;..\..\..\mupen64plus-win32-deps\SDL2-2.0.10\include;..\..\..\mupen64plus-win32-deps\SDL2_net-2.0.1\include;..\..\..\mupen64plus-win32-deps\zlib-1.2.11\include;..\..\..\mupen64plus-win32-deps\libpng-1.6.37\include;..\..\..\mupen64plus-win32-deps\freetype-2.10.1\include;..\..\..\mupen64plus-win32-deps\opencv-3.0.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;_CRT_SECURE_NO_DEPRECATE;DYNAREC;M64P_OSD;M64P_NETPLAY;M64P_PARALLEL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;_CRT_SECURE_NO_DEPRECATE;DYNAREC;M64P_OSD;M64P_NETPLAY;M64P_PARALLEL;COMPARE_CORE;DBG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
@@ -934,6 +934,8 @@
       <AdditionalDependencies>shell32.lib;opengl32.lib;glu32.lib;..\..\..\mupen64plus-win32-deps\SDL2-2.0.10\lib\x86\SDL2.lib;..\..\..\mupen64plus-win32-deps\SDL2_net-2.0.1\lib\x86\SDL2_net.lib;..\..\..\mupen64plus-win32-deps\zlib-1.2.11\lib\x86\zlib.lib;..\..\..\mupen64plus-win32-deps\libpng-1.6.37\lib\x86\libpng16.lib;..\..\..\mupen64plus-win32-deps\freetype-2.10.1\lib\x86\freetype.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <FixedBaseAddress>true</FixedBaseAddress>
     </Link>
     <PreBuildEvent>
       <Command>..\..\tools\gen_asm_script.cmd ..\..\src\asm_defines\ $(IntDir)</Command>
@@ -943,7 +945,7 @@
     <ClCompile>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>..\..\src;..\..\subprojects\md5;..\..\subprojects\minizip;..\..\subprojects\oglft;..\..\subprojects\xxhash;..\..\..\mupen64plus-win32-deps\SDL2-2.0.10\include;..\..\..\mupen64plus-win32-deps\SDL2_net-2.0.1\include;..\..\..\mupen64plus-win32-deps\zlib-1.2.11\include;..\..\..\mupen64plus-win32-deps\libpng-1.6.37\include;..\..\..\mupen64plus-win32-deps\freetype-2.10.1\include;..\..\..\mupen64plus-win32-deps\opencv-3.0.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;_CRT_SECURE_NO_DEPRECATE;DYNAREC;M64P_PARALLEL;M64P_OSD;M64P_NETPLAY;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;_CRT_SECURE_NO_DEPRECATE;DYNAREC;M64P_PARALLEL;M64P_OSD;M64P_NETPLAY;__x86_64__;COMPARE_CORE;DBG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
@@ -952,6 +954,8 @@
       <AdditionalDependencies>shell32.lib;opengl32.lib;glu32.lib;..\..\..\mupen64plus-win32-deps\SDL2-2.0.10\lib\x64\SDL2.lib;..\..\..\mupen64plus-win32-deps\SDL2_net-2.0.1\lib\x64\SDL2_net.lib;..\..\..\mupen64plus-win32-deps\zlib-1.2.11\lib\x64\zlib.lib;..\..\..\mupen64plus-win32-deps\libpng-1.6.37\lib\x64\libpng16.lib;..\..\..\mupen64plus-win32-deps\freetype-2.10.1\lib\x64\freetype.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <FixedBaseAddress>true</FixedBaseAddress>
     </Link>
     <PreBuildEvent>
       <Command>..\..\tools\gen_asm_script.cmd ..\..\src\asm_defines\ $(IntDir) /D "__x86_64__"</Command>
@@ -961,7 +965,7 @@
     <ClCompile>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>..\..\src;..\..\subprojects\md5;..\..\subprojects\minizip;..\..\subprojects\oglft;..\..\subprojects\xxhash;..\..\..\mupen64plus-win32-deps\SDL2-2.0.10\include;..\..\..\mupen64plus-win32-deps\SDL2_net-2.0.1\include;..\..\..\mupen64plus-win32-deps\zlib-1.2.11\include;..\..\..\mupen64plus-win32-deps\libpng-1.6.37\include;..\..\..\mupen64plus-win32-deps\freetype-2.10.1\include;..\..\..\mupen64plus-win32-deps\opencv-3.0.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;_CRT_SECURE_NO_DEPRECATE;DYNAREC;M64P_OSD;M64P_NETPLAY;M64P_PARALLEL;NEW_DYNAREC=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;_CRT_SECURE_NO_DEPRECATE;DYNAREC;M64P_OSD;M64P_NETPLAY;M64P_PARALLEL;NEW_DYNAREC=1;COMPARE_CORE;DBG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
@@ -970,6 +974,8 @@
       <AdditionalDependencies>shell32.lib;opengl32.lib;glu32.lib;..\..\..\mupen64plus-win32-deps\SDL2-2.0.10\lib\x86\SDL2.lib;..\..\..\mupen64plus-win32-deps\SDL2_net-2.0.1\lib\x86\SDL2_net.lib;..\..\..\mupen64plus-win32-deps\zlib-1.2.11\lib\x86\zlib.lib;..\..\..\mupen64plus-win32-deps\libpng-1.6.37\lib\x86\libpng16.lib;..\..\..\mupen64plus-win32-deps\freetype-2.10.1\lib\x86\freetype.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <FixedBaseAddress>true</FixedBaseAddress>
     </Link>
     <PreBuildEvent>
       <Command>..\..\tools\gen_asm_script.cmd ..\..\src\asm_defines\ $(IntDir) /D "NEW_DYNAREC=1"</Command>
@@ -979,7 +985,7 @@
     <ClCompile>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>..\..\src;..\..\subprojects\md5;..\..\subprojects\minizip;..\..\subprojects\oglft;..\..\subprojects\xxhash;..\..\..\mupen64plus-win32-deps\SDL2-2.0.10\include;..\..\..\mupen64plus-win32-deps\SDL2_net-2.0.1\include;..\..\..\mupen64plus-win32-deps\zlib-1.2.11\include;..\..\..\mupen64plus-win32-deps\libpng-1.6.37\include;..\..\..\mupen64plus-win32-deps\freetype-2.10.1\include;..\..\..\mupen64plus-win32-deps\opencv-3.0.0\include;..\..\..\mupen64plus-win32-deps\capstone\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;_CRT_SECURE_NO_DEPRECATE;DYNAREC;M64P_OSD;M64P_NETPLAY;M64P_PARALLEL;NEW_DYNAREC=1;RECOMPILER_DEBUG=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;_CRT_SECURE_NO_DEPRECATE;DYNAREC;M64P_OSD;M64P_NETPLAY;M64P_PARALLEL;NEW_DYNAREC=1;RECOMPILER_DEBUG=1;COMPARE_CORE;DBG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
@@ -988,6 +994,8 @@
       <AdditionalDependencies>shell32.lib;opengl32.lib;glu32.lib;..\..\..\mupen64plus-win32-deps\SDL2-2.0.10\lib\x86\SDL2.lib;..\..\..\mupen64plus-win32-deps\SDL2_net-2.0.1\lib\x86\SDL2_net.lib;..\..\..\mupen64plus-win32-deps\zlib-1.2.11\lib\x86\zlib.lib;..\..\..\mupen64plus-win32-deps\libpng-1.6.37\lib\x86\libpng16.lib;..\..\..\mupen64plus-win32-deps\freetype-2.10.1\lib\x86\freetype.lib;..\..\..\mupen64plus-win32-deps\capstone\lib\x86\capstone_dll.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <FixedBaseAddress>true</FixedBaseAddress>
     </Link>
     <PreBuildEvent>
       <Command>..\..\tools\gen_asm_script.cmd ..\..\src\asm_defines\ $(IntDir) /D "NEW_DYNAREC=1"</Command>
@@ -997,7 +1005,7 @@
     <ClCompile>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>..\..\src;..\..\subprojects\md5;..\..\subprojects\minizip;..\..\subprojects\oglft;..\..\subprojects\xxhash;..\..\..\mupen64plus-win32-deps\SDL2-2.0.10\include;..\..\..\mupen64plus-win32-deps\SDL2_net-2.0.1\include;..\..\..\mupen64plus-win32-deps\zlib-1.2.11\include;..\..\..\mupen64plus-win32-deps\libpng-1.6.37\include;..\..\..\mupen64plus-win32-deps\freetype-2.10.1\include;..\..\..\mupen64plus-win32-deps\opencv-3.0.0\include;..\..\..\mupen64plus-win32-deps\capstone\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;_CRT_SECURE_NO_DEPRECATE;DYNAREC;M64P_OSD;M64P_NETPLAY;M64P_PARALLEL;NEW_DYNAREC=1;RECOMPILER_DEBUG=3;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;_CRT_SECURE_NO_DEPRECATE;DYNAREC;M64P_OSD;M64P_NETPLAY;M64P_PARALLEL;NEW_DYNAREC=1;RECOMPILER_DEBUG=3;COMPARE_CORE;DBG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
@@ -1006,6 +1014,8 @@
       <AdditionalDependencies>shell32.lib;opengl32.lib;glu32.lib;..\..\..\mupen64plus-win32-deps\SDL2-2.0.10\lib\x86\SDL2.lib;..\..\..\mupen64plus-win32-deps\SDL2_net-2.0.1\lib\x86\SDL2_net.lib;..\..\..\mupen64plus-win32-deps\zlib-1.2.11\lib\x86\zlib.lib;..\..\..\mupen64plus-win32-deps\libpng-1.6.37\lib\x86\libpng16.lib;..\..\..\mupen64plus-win32-deps\freetype-2.10.1\lib\x86\freetype.lib;..\..\..\mupen64plus-win32-deps\capstone\lib\x86\capstone_dll.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <FixedBaseAddress>true</FixedBaseAddress>
     </Link>
     <PreBuildEvent>
       <Command>..\..\tools\gen_asm_script.cmd ..\..\src\asm_defines\ $(IntDir) /D "NEW_DYNAREC=1"</Command>
@@ -1015,7 +1025,7 @@
     <ClCompile>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>..\..\src;..\..\subprojects\md5;..\..\subprojects\minizip;..\..\subprojects\oglft;..\..\subprojects\xxhash;..\..\..\mupen64plus-win32-deps\SDL2-2.0.10\include;..\..\..\mupen64plus-win32-deps\SDL2_net-2.0.1\include;..\..\..\mupen64plus-win32-deps\zlib-1.2.11\include;..\..\..\mupen64plus-win32-deps\libpng-1.6.37\include;..\..\..\mupen64plus-win32-deps\freetype-2.10.1\include;..\..\..\mupen64plus-win32-deps\opencv-3.0.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;_CRT_SECURE_NO_DEPRECATE;DYNAREC;M64P_PARALLEL;M64P_OSD;M64P_NETPLAY;NEW_DYNAREC=2;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;_CRT_SECURE_NO_DEPRECATE;DYNAREC;M64P_PARALLEL;M64P_OSD;M64P_NETPLAY;NEW_DYNAREC=2;__x86_64__;COMPARE_CORE;DBG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
@@ -1024,6 +1034,8 @@
       <AdditionalDependencies>shell32.lib;opengl32.lib;glu32.lib;..\..\..\mupen64plus-win32-deps\SDL2-2.0.10\lib\x64\SDL2.lib;..\..\..\mupen64plus-win32-deps\SDL2_net-2.0.1\lib\x64\SDL2_net.lib;..\..\..\mupen64plus-win32-deps\zlib-1.2.11\lib\x64\zlib.lib;..\..\..\mupen64plus-win32-deps\libpng-1.6.37\lib\x64\libpng16.lib;..\..\..\mupen64plus-win32-deps\freetype-2.10.1\lib\x64\freetype.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <FixedBaseAddress>true</FixedBaseAddress>
     </Link>
     <PreBuildEvent>
       <Command>..\..\tools\gen_asm_script.cmd ..\..\src\asm_defines\ $(IntDir) /D "__x86_64__" /D "NEW_DYNAREC=2"</Command>
@@ -1033,7 +1045,7 @@
     <ClCompile>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>..\..\src;..\..\subprojects\md5;..\..\subprojects\minizip;..\..\subprojects\oglft;..\..\subprojects\xxhash;..\..\..\mupen64plus-win32-deps\SDL2-2.0.10\include;..\..\..\mupen64plus-win32-deps\SDL2_net-2.0.1\include;..\..\..\mupen64plus-win32-deps\zlib-1.2.11\include;..\..\..\mupen64plus-win32-deps\libpng-1.6.37\include;..\..\..\mupen64plus-win32-deps\freetype-2.10.1\include;..\..\..\mupen64plus-win32-deps\opencv-3.0.0\include;..\..\..\mupen64plus-win32-deps\capstone\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;_CRT_SECURE_NO_DEPRECATE;DYNAREC;M64P_PARALLEL;M64P_OSD;M64P_NETPLAY;NEW_DYNAREC=2;__x86_64__;RECOMPILER_DEBUG=4;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;_CRT_SECURE_NO_DEPRECATE;DYNAREC;M64P_PARALLEL;M64P_OSD;M64P_NETPLAY;NEW_DYNAREC=2;__x86_64__;RECOMPILER_DEBUG=4;COMPARE_CORE;DBG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
@@ -1042,6 +1054,8 @@
       <AdditionalDependencies>shell32.lib;opengl32.lib;glu32.lib;..\..\..\mupen64plus-win32-deps\SDL2-2.0.10\lib\x64\SDL2.lib;..\..\..\mupen64plus-win32-deps\SDL2_net-2.0.1\lib\x64\SDL2_net.lib;..\..\..\mupen64plus-win32-deps\zlib-1.2.11\lib\x64\zlib.lib;..\..\..\mupen64plus-win32-deps\libpng-1.6.37\lib\x64\libpng16.lib;..\..\..\mupen64plus-win32-deps\freetype-2.10.1\lib\x64\freetype.lib;..\..\..\mupen64plus-win32-deps\capstone\lib\x64\capstone_dll.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <FixedBaseAddress>true</FixedBaseAddress>
     </Link>
     <PreBuildEvent>
       <Command>..\..\tools\gen_asm_script.cmd ..\..\src\asm_defines\ $(IntDir) /D "__x86_64__" /D "NEW_DYNAREC=2"</Command>
@@ -1051,7 +1065,7 @@
     <ClCompile>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>..\..\src;..\..\subprojects\md5;..\..\subprojects\minizip;..\..\subprojects\oglft;..\..\subprojects\xxhash;..\..\..\mupen64plus-win32-deps\SDL2-2.0.10\include;..\..\..\mupen64plus-win32-deps\SDL2_net-2.0.1\include;..\..\..\mupen64plus-win32-deps\zlib-1.2.11\include;..\..\..\mupen64plus-win32-deps\libpng-1.6.37\include;..\..\..\mupen64plus-win32-deps\freetype-2.10.1\include;..\..\..\mupen64plus-win32-deps\opencv-3.0.0\include;..\..\..\mupen64plus-win32-deps\capstone\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;_CRT_SECURE_NO_DEPRECATE;DYNAREC;M64P_PARALLEL;M64P_OSD;M64P_NETPLAY;NEW_DYNAREC=2;__x86_64__;RECOMPILER_DEBUG=2;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;_CRT_SECURE_NO_DEPRECATE;DYNAREC;M64P_PARALLEL;M64P_OSD;M64P_NETPLAY;NEW_DYNAREC=2;__x86_64__;RECOMPILER_DEBUG=2;COMPARE_CORE;DBG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
@@ -1060,6 +1074,8 @@
       <AdditionalDependencies>shell32.lib;opengl32.lib;glu32.lib;..\..\..\mupen64plus-win32-deps\SDL2-2.0.10\lib\x64\SDL2.lib;..\..\..\mupen64plus-win32-deps\SDL2_net-2.0.1\lib\x64\SDL2_net.lib;..\..\..\mupen64plus-win32-deps\zlib-1.2.11\lib\x64\zlib.lib;..\..\..\mupen64plus-win32-deps\libpng-1.6.37\lib\x64\libpng16.lib;..\..\..\mupen64plus-win32-deps\freetype-2.10.1\lib\x64\freetype.lib;..\..\..\mupen64plus-win32-deps\capstone\lib\x64\capstone_dll.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <FixedBaseAddress>true</FixedBaseAddress>
     </Link>
     <PreBuildEvent>
       <Command>..\..\tools\gen_asm_script.cmd ..\..\src\asm_defines\ $(IntDir) /D "__x86_64__" /D "NEW_DYNAREC=2"</Command>
@@ -1068,7 +1084,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <AdditionalIncludeDirectories>..\..\src;..\..\subprojects\md5;..\..\subprojects\minizip;..\..\subprojects\oglft;..\..\subprojects\xxhash;..\..\..\mupen64plus-win32-deps\SDL2-2.0.10\include;..\..\..\mupen64plus-win32-deps\SDL2_net-2.0.1\include;..\..\..\mupen64plus-win32-deps\zlib-1.2.11\include;..\..\..\mupen64plus-win32-deps\libpng-1.6.37\include;..\..\..\mupen64plus-win32-deps\freetype-2.10.1\include;..\..\..\mupen64plus-win32-deps\opencv-3.0.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;_CRT_SECURE_NO_DEPRECATE;DYNAREC;M64P_OSD;M64P_NETPLAY;M64P_PARALLEL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;_CRT_SECURE_NO_DEPRECATE;DYNAREC;M64P_OSD;M64P_NETPLAY;M64P_PARALLEL;COMPARE_CORE;DBG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>MaxSpeed</Optimization>
@@ -1081,6 +1097,8 @@
       <SubSystem>Windows</SubSystem>
       <OptimizeReferences>true</OptimizeReferences>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <FixedBaseAddress>true</FixedBaseAddress>
     </Link>
     <PreBuildEvent>
       <Command>..\..\tools\gen_asm_script.cmd ..\..\src\asm_defines\ $(IntDir)</Command>
@@ -1089,7 +1107,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
       <AdditionalIncludeDirectories>..\..\src;..\..\subprojects\md5;..\..\subprojects\minizip;..\..\subprojects\oglft;..\..\subprojects\xxhash;..\..\..\mupen64plus-win32-deps\SDL2-2.0.10\include;..\..\..\mupen64plus-win32-deps\SDL2_net-2.0.1\include;..\..\..\mupen64plus-win32-deps\zlib-1.2.11\include;..\..\..\mupen64plus-win32-deps\libpng-1.6.37\include;..\..\..\mupen64plus-win32-deps\freetype-2.10.1\include;..\..\..\mupen64plus-win32-deps\opencv-3.0.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;_CRT_SECURE_NO_DEPRECATE;DYNAREC;M64P_PARALLEL;M64P_OSD;M64P_NETPLAY;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;_CRT_SECURE_NO_DEPRECATE;DYNAREC;M64P_PARALLEL;M64P_OSD;M64P_NETPLAY;__x86_64__;COMPARE_CORE;DBG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>MaxSpeed</Optimization>
@@ -1102,6 +1120,8 @@
       <SubSystem>Windows</SubSystem>
       <OptimizeReferences>true</OptimizeReferences>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <FixedBaseAddress>true</FixedBaseAddress>
     </Link>
     <PreBuildEvent>
       <Command>..\..\tools\gen_asm_script.cmd ..\..\src\asm_defines\ $(IntDir) /D "__x86_64__"</Command>
@@ -1110,7 +1130,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='New_Dynarec_Release|Win32'">
     <ClCompile>
       <AdditionalIncludeDirectories>..\..\src;..\..\subprojects\md5;..\..\subprojects\minizip;..\..\subprojects\oglft;..\..\subprojects\xxhash;..\..\..\mupen64plus-win32-deps\SDL2-2.0.10\include;..\..\..\mupen64plus-win32-deps\SDL2_net-2.0.1\include;..\..\..\mupen64plus-win32-deps\zlib-1.2.11\include;..\..\..\mupen64plus-win32-deps\libpng-1.6.37\include;..\..\..\mupen64plus-win32-deps\freetype-2.10.1\include;..\..\..\mupen64plus-win32-deps\opencv-3.0.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;_CRT_SECURE_NO_DEPRECATE;DYNAREC;M64P_OSD;M64P_NETPLAY;M64P_PARALLEL;NEW_DYNAREC=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;_CRT_SECURE_NO_DEPRECATE;DYNAREC;M64P_OSD;M64P_NETPLAY;M64P_PARALLEL;NEW_DYNAREC=1;COMPARE_CORE;DBG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>MaxSpeed</Optimization>
@@ -1123,6 +1143,8 @@
       <SubSystem>Windows</SubSystem>
       <OptimizeReferences>true</OptimizeReferences>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <FixedBaseAddress>true</FixedBaseAddress>
     </Link>
     <PreBuildEvent>
       <Command>..\..\tools\gen_asm_script.cmd ..\..\src\asm_defines\ $(IntDir) /D "NEW_DYNAREC=1"</Command>
@@ -1131,7 +1153,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='New_Dynarec_Release|x64'">
     <ClCompile>
       <AdditionalIncludeDirectories>..\..\src;..\..\subprojects\md5;..\..\subprojects\minizip;..\..\subprojects\oglft;..\..\subprojects\xxhash;..\..\..\mupen64plus-win32-deps\SDL2-2.0.10\include;..\..\..\mupen64plus-win32-deps\SDL2_net-2.0.1\include;..\..\..\mupen64plus-win32-deps\zlib-1.2.11\include;..\..\..\mupen64plus-win32-deps\libpng-1.6.37\include;..\..\..\mupen64plus-win32-deps\freetype-2.10.1\include;..\..\..\mupen64plus-win32-deps\opencv-3.0.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;_CRT_SECURE_NO_DEPRECATE;DYNAREC;M64P_PARALLEL;M64P_OSD;M64P_NETPLAY;NEW_DYNAREC=2;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;_CRT_SECURE_NO_DEPRECATE;DYNAREC;M64P_PARALLEL;M64P_OSD;M64P_NETPLAY;NEW_DYNAREC=2;__x86_64__;COMPARE_CORE;DBG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>MaxSpeed</Optimization>
@@ -1144,6 +1166,8 @@
       <SubSystem>Windows</SubSystem>
       <OptimizeReferences>true</OptimizeReferences>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <FixedBaseAddress>true</FixedBaseAddress>
     </Link>
     <PreBuildEvent>
       <Command>..\..\tools\gen_asm_script.cmd ..\..\src\asm_defines\ $(IntDir) /D "__x86_64__" /D "NEW_DYNAREC=2"</Command>

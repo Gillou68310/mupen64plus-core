@@ -66,9 +66,9 @@ void genlink_subblock(struct r4300_core* r4300);
 void genni(struct r4300_core* r4300);
 void gennotcompiled(struct r4300_core* r4300);
 void genfin_block(struct r4300_core* r4300);
-#ifdef COMPARE_CORE
+/*#ifdef COMPARE_CORE
 void gendebug(struct r4300_core* r4300);
-#endif
+#endif*/
 
 void gen_RESERVED(struct r4300_core* r4300);
 
@@ -537,9 +537,9 @@ void dynarec_init_block(struct r4300_core* r4300, uint32_t address)
             r4300->recomp.dst->addr = b->start + i*4;
             r4300->recomp.dst->reg_cache_infos.need_map = 0;
             r4300->recomp.dst->local_addr = r4300->recomp.code_length;
-#ifdef COMPARE_CORE
+/*#ifdef COMPARE_CORE
             gendebug(r4300);
-#endif
+#endif*/
             r4300->recomp.dst->ops = dynarec_notcompiled;
             gennotcompiled(r4300);
         }
@@ -661,9 +661,9 @@ void dynarec_recompile_block(struct r4300_core* r4300, const uint32_t* iw, struc
             }
         }
 
-#ifdef COMPARE_CORE
+/*#ifdef COMPARE_CORE
         gendebug(r4300);
-#endif
+#endif*/
 #if defined(PROFILE_R4300)
         long x86addr = (long) (block->code + block->block[i].local_addr);
 
@@ -717,9 +717,9 @@ void dynarec_recompile_block(struct r4300_core* r4300, const uint32_t* iw, struc
         r4300->recomp.dst->addr = block->start + i*4;
         r4300->recomp.dst->reg_cache_infos.need_map = 0;
         r4300->recomp.dst->local_addr = r4300->recomp.code_length;
-#ifdef COMPARE_CORE
+/*#ifdef COMPARE_CORE
         gendebug(r4300);
-#endif
+#endif*/
         r4300->recomp.dst->ops = dynarec_fin_block;
         genfin_block(r4300);
         ++i;
@@ -729,9 +729,9 @@ void dynarec_recompile_block(struct r4300_core* r4300, const uint32_t* iw, struc
             r4300->recomp.dst->addr = block->start + i*4;
             r4300->recomp.dst->reg_cache_infos.need_map = 0;
             r4300->recomp.dst->local_addr = r4300->recomp.code_length;
-#ifdef COMPARE_CORE
+/*#ifdef COMPARE_CORE
             gendebug(r4300);
-#endif
+#endif*/
             r4300->recomp.dst->ops = dynarec_fin_block;
             genfin_block(r4300);
             ++i;

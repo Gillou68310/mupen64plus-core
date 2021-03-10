@@ -144,13 +144,13 @@ struct r4300_core
 
         int branch_taken;
         struct precomp_instr fake_instr;
-#ifdef COMPARE_CORE
+/*#ifdef COMPARE_CORE
 #if defined(__x86_64__)
         long long debug_reg_storage[8];
 #else
         int eax, ebx, ecx, edx, esp, ebp, esi, edi;
 #endif
-#endif
+#endif*/
         unsigned char **inst_pointer;                   /* output buffer for recompiled code */
         int max_code_length;                            /* current recompiled code's buffer length */
         int fast_memory;
