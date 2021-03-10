@@ -102,6 +102,12 @@ EXPORT m64p_error CALL CoreStartup(int APIVersion, const char *ConfigPath, const
         return M64ERR_NO_MEMORY;
     }
 
+#ifdef NEW_DYNAREC
+    g_dev.r4300.emumode = ConfigGetParamInt(g_CoreConfig, "R4300Emulator");
+    g_dev.r4300.cp0.new_dynarec_hot_state = &g_dev.r4300.new_dynarec_hot_state;
+    g_dev.r4300.cp1.new_dynarec_hot_state = &g_dev.r4300.new_dynarec_hot_state;
+#endif
+
     /* The ROM database contains MD5 hashes, goodnames, and some game-specific parameters */
     romdatabase_open();
 

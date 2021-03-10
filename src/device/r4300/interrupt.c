@@ -35,6 +35,7 @@
 
 #include "api/callbacks.h"
 #include "api/m64p_types.h"
+#include "api/debugger.h"
 #include "device/pif/bootrom_hle.h"
 #include "device/r4300/cached_interp.h"
 #include "device/r4300/cp0.h"
@@ -580,6 +581,11 @@ void gen_interrupt(struct r4300_core* r4300)
         generic_jump_to(r4300, dest);
         return;
     }
+
+#ifdef COMPARE_CORE
+    opc = 0;
+    CoreCompareCallback();
+#endif
 
     switch (r4300->cp0.q.first->data.type)
     {

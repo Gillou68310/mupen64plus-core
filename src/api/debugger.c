@@ -40,7 +40,7 @@
 #include "m64p_types.h"
 #include "main/main.h"
 
-unsigned int op;
+unsigned int opc;
 
 /* local variables */
 static void (*callback_ui_init)(void) = NULL;
@@ -82,7 +82,7 @@ void DebuggerCallback(eDbgCallbackType type, unsigned int param)
 void CoreCompareCallback(void)
 {
     if (callback_core_compare != NULL)
-        (*callback_core_compare)(op);
+        (*callback_core_compare)(opc);
 }
 
 void CoreCompareDataSync(int length, void *ptr)
@@ -374,6 +374,10 @@ EXPORT void * CALL DebugGetCPUDataPtr(m64p_dbg_cpu_data cpu_data_type)
             return r4300_cp1_regs_simple(&r4300->cp1);
         case M64P_CPU_REG_COP1_FGR_64:
             return &cp1_regs->dword;
+        case M64P_CPU_REG_COP1_FCR0:
+            return r4300_cp1_fcr0(&r4300->cp1);
+        case M64P_CPU_REG_COP1_FCR31:
+            return r4300_cp1_fcr31(&r4300->cp1);
         case M64P_CPU_TLB:
             return r4300->cp0.tlb.entries;
         default:
