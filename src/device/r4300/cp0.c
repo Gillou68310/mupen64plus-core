@@ -217,7 +217,7 @@ void TLB_refill_exception(struct r4300_core* r4300, uint32_t address, int w)
     {
         if (r4300->emumode != EMUMODE_PURE_INTERPRETER)
         {
-            cp0_regs[CP0_EPC_REG] = (w != 2)
+            cp0_regs[CP0_EPC_REG] = (w < 2)
                 ? *r4300_pc(r4300)
                 : address;
         }
@@ -258,7 +258,7 @@ void TLB_refill_exception(struct r4300_core* r4300, uint32_t address, int w)
     {
         cp0_regs[CP0_CAUSE_REG] &= ~CP0_CAUSE_BD;
     }
-    if (w != 2) {
+    if (w < 2) {
         cp0_regs[CP0_EPC_REG] -= 4;
     }
 

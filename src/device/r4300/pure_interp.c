@@ -164,9 +164,15 @@ static void InterpretOpcode(struct r4300_core* r4300);
 
 void InterpretOpcode(struct r4300_core* r4300)
 {
-	uint32_t* op_address = fast_mem_access(r4300, *r4300_pc(r4300));
-	if (op_address == NULL)
-		return;
+	uint32_t address = *r4300_pc(r4300);
+    if ((address & UINT32_C(0xc0000000)) != UINT32_C(0x80000000)) {
+        address = virtual_to_physical_address(r4300, address, 3);
+        if (address == 0) // TLB exception
+            return;
+    }
+
+    address &= UINT32_C(0x1ffffffc);
+	uint32_t* op_address = mem_base_u32(r4300->mem->base, address);
 	uint32_t op = *op_address;
 
 	switch ((op >> 26) & 0x3F) {
