@@ -969,6 +969,7 @@
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
+      <EnableEnhancedInstructionSet>NoExtensions</EnableEnhancedInstructionSet>
     </ClCompile>
     <Link>
       <AdditionalDependencies>shell32.lib;opengl32.lib;glu32.lib;..\..\..\mupen64plus-win32-deps\SDL2-2.0.10\lib\x86\SDL2.lib;..\..\..\mupen64plus-win32-deps\SDL2_net-2.0.1\lib\x86\SDL2_net.lib;..\..\..\mupen64plus-win32-deps\zlib-1.2.11\lib\x86\zlib.lib;..\..\..\mupen64plus-win32-deps\libpng-1.6.37\lib\x86\libpng16.lib;..\..\..\mupen64plus-win32-deps\freetype-2.10.1\lib\x86\freetype.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -989,6 +990,7 @@
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
+      <EnableEnhancedInstructionSet>NoExtensions</EnableEnhancedInstructionSet>
     </ClCompile>
     <Link>
       <AdditionalDependencies>shell32.lib;opengl32.lib;glu32.lib;..\..\..\mupen64plus-win32-deps\SDL2-2.0.10\lib\x86\SDL2.lib;..\..\..\mupen64plus-win32-deps\SDL2_net-2.0.1\lib\x86\SDL2_net.lib;..\..\..\mupen64plus-win32-deps\zlib-1.2.11\lib\x86\zlib.lib;..\..\..\mupen64plus-win32-deps\libpng-1.6.37\lib\x86\libpng16.lib;..\..\..\mupen64plus-win32-deps\freetype-2.10.1\lib\x86\freetype.lib;..\..\..\mupen64plus-win32-deps\capstone\lib\x86\capstone_dll.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -1009,6 +1011,7 @@
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
+      <EnableEnhancedInstructionSet>NoExtensions</EnableEnhancedInstructionSet>
     </ClCompile>
     <Link>
       <AdditionalDependencies>shell32.lib;opengl32.lib;glu32.lib;..\..\..\mupen64plus-win32-deps\SDL2-2.0.10\lib\x86\SDL2.lib;..\..\..\mupen64plus-win32-deps\SDL2_net-2.0.1\lib\x86\SDL2_net.lib;..\..\..\mupen64plus-win32-deps\zlib-1.2.11\lib\x86\zlib.lib;..\..\..\mupen64plus-win32-deps\libpng-1.6.37\lib\x86\libpng16.lib;..\..\..\mupen64plus-win32-deps\freetype-2.10.1\lib\x86\freetype.lib;..\..\..\mupen64plus-win32-deps\capstone\lib\x86\capstone_dll.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -1136,6 +1139,7 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
+      <EnableEnhancedInstructionSet>NoExtensions</EnableEnhancedInstructionSet>
     </ClCompile>
     <Link>
       <AdditionalDependencies>shell32.lib;opengl32.lib;glu32.lib;..\..\..\mupen64plus-win32-deps\SDL2-2.0.10\lib\x86\SDL2.lib;..\..\..\mupen64plus-win32-deps\SDL2_net-2.0.1\lib\x86\SDL2_net.lib;..\..\..\mupen64plus-win32-deps\zlib-1.2.11\lib\x86\zlib.lib;..\..\..\mupen64plus-win32-deps\libpng-1.6.37\lib\x86\libpng16.lib;..\..\..\mupen64plus-win32-deps\freetype-2.10.1\lib\x86\freetype.lib;%(AdditionalDependencies)</AdditionalDependencies>

@@ -3503,6 +3503,7 @@ static void fconv_assemble_x64(int i,struct regstat *i_regs)
   }
 
 #ifndef INTERPRET_FCONV
+#ifdef __SSE__
   if(opcode2[i]==0x10&&(source[i]&0x3f)==0x0d) { // trunc_w_s
     emit_readptr((intptr_t)&g_dev.r4300.new_dynarec_hot_state.cp1_regs_simple[(source[i]>>11)&0x1f],temp);
     emit_movss_load(temp,0);
@@ -3520,6 +3521,7 @@ static void fconv_assemble_x64(int i,struct regstat *i_regs)
     emit_movd_store(0,temp);
     return;
   }
+#endif
   
   if(opcode2[i]==0x14&&(source[i]&0x3f)==0x20) { // cvt_s_w
     emit_readptr((intptr_t)&g_dev.r4300.new_dynarec_hot_state.cp1_regs_simple[(source[i]>>11)&0x1f],temp);
@@ -4334,6 +4336,7 @@ static void literal_pool_jumpover(int n) {}
 // CPU-architecture-specific initialization
 static void arch_init()
 {
+  // new dynarec use x87 FPU, this will cause precision diff with interpreter as x64/amd64 use SSE by default
   g_dev.r4300.new_dynarec_hot_state.rounding_modes[0]=0x33F; // round
   g_dev.r4300.new_dynarec_hot_state.rounding_modes[1]=0xF3F; // trunc
   g_dev.r4300.new_dynarec_hot_state.rounding_modes[2]=0xB3F; // ceil

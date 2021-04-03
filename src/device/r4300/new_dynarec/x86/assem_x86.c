@@ -3977,6 +3977,8 @@ static void literal_pool_jumpover(int n) {}
 // CPU-architecture-specific initialization, not needed for x86
 static void arch_init(void)
 {
+  // new dynarec use x87 FPU, this will cause precision diff with interpreter if compiled with SSE
+  // set /arch:IA32 in MSVC to build with x87
   g_dev.r4300.new_dynarec_hot_state.rounding_modes[0]=0x33F; // round
   g_dev.r4300.new_dynarec_hot_state.rounding_modes[1]=0xF3F; // trunc
   g_dev.r4300.new_dynarec_hot_state.rounding_modes[2]=0xB3F; // ceil

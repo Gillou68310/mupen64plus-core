@@ -74,18 +74,18 @@ void recomp_dbg_block(int addr);
 #define INV_DEBUG 0
 #define COUNT_NOTCOMPILEDS 0
 
-//#define INTERPRET_LOAD
-//#define INTERPRET_STORE
-//#define INTERPRET_C1LS
-//#define INTERPRET_LOADLR
-//#define INTERPRET_STORELR
-//#define INTERPRET_MULT
-//#define INTERPRET_DIV
-//#define INTERPRET_MULT64
-//#define INTERPRET_DIV64
-//#define INTERPRET_FCONV
-//#define INTERPRET_FLOAT
-//#define INTERPRET_FCOMP
+#define INTERPRET_LOAD
+#define INTERPRET_STORE
+#define INTERPRET_C1LS
+#define INTERPRET_LOADLR
+#define INTERPRET_STORELR
+#define INTERPRET_MULT
+#define INTERPRET_DIV
+#define INTERPRET_MULT64
+#define INTERPRET_DIV64
+#define INTERPRET_FCONV
+#define INTERPRET_FLOAT
+#define INTERPRET_FCOMP
 
 #if ASSEM_DEBUG
     #define assem_debug(...) DebugMessage(M64MSG_VERBOSE, __VA_ARGS__)
@@ -1746,6 +1746,7 @@ static void remove_hash(u_int vaddr)
 
 static void tlb_speed_hacks()
 {
+#if 0
   // Goldeneye hack
   if (strncmp((char *) ROM_HEADER.Name, "GOLDENEYE",9) == 0)
   {
@@ -1787,6 +1788,7 @@ static void tlb_speed_hacks()
       }
     }
   }
+#endif
 }
 
 u_int verify_dirty(struct ll_entry * head)
@@ -4939,6 +4941,19 @@ static void mov_assemble(int i,struct regstat *i_regs)
         else emit_loadreg(rs1[i]|64,th);
       }
     }
+
+#if 0
+    if(opcode2[i]==0x11) // MTHI
+    {
+      if(tl>=0) emit_storereg(HIREG,tl);
+      if(th>=0) emit_storereg(HIREG|64,th);
+    }
+    if(opcode2[i]==0x13) // MTLO
+    {
+      if(tl>=0) emit_storereg(LOREG,tl);
+      if(th>=0) emit_storereg(LOREG|64,th);
+    }
+#endif
   }
 }
 
@@ -8379,7 +8394,7 @@ void new_dynarec_init(void)
   // Copy this into local area so we don't have to put it in every literal pool
   g_dev.r4300.new_dynarec_hot_state.invc_ptr=g_dev.r4300.cached_interp.invalid_code;
 #endif
-  stop_after_jal=0;
+  stop_after_jal=1;
   // TLB
   using_tlb=0;
   for(n=0;n<524288;n++) // 0 .. 0x7FFFFFFF
@@ -11429,6 +11444,25 @@ int new_recompile_block(int addr)
         load_regs(regs[i].regmap_entry,regs[i].regmap,regs[i].was32,INVCP,INVCP);
       if(bt[i]) cop1_usable=0;
       // assemble
+
+      //If the lower part of a register is not dirty at branches
+      //The upper part should also be not dirty
+      if(itype[i]==UJUMP||itype[i]==RJUMP||itype[i]==CJUMP||itype[i]==SJUMP||itype[i]==FJUMP)
+      {
+        for(hr=0;hr<HOST_REGS;hr++)
+        {
+          signed char temp=get_reg(branch_regs[i].regmap,branch_regs[i].regmap[hr]|64);
+          if(branch_regs[i].regmap[hr]>=0&&temp>=0&&temp!=hr)
+          {
+            if(!((branch_regs[i].dirty>>hr)&1))
+            {
+              if(branch_regs[i].regmap[temp]==regs[i].regmap[temp]) //FIXME: Inheriting dirty flag from delay slot depsite being not dirty (same host reg but different target reg)
+                assert(!((branch_regs[i].dirty>>temp)&1));
+            }
+          }
+        }
+      }
+
       switch(itype[i]) {
         case ALU:
           alu_assemble(i,&regs[i]);break;

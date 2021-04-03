@@ -302,7 +302,7 @@ int r4300_read_aligned_word(struct r4300_core* r4300, uint32_t address, uint32_t
 {
 #ifdef COMPARE_CORE
     opc = 1;
-    if (*r4300_pc_struct(r4300) != NULL || (r4300->emumode == EMUMODE_DYNAREC))
+    if (*r4300_pc_struct(r4300) != NULL && *r4300_pc(r4300) != 0)
     {
         cp0_update_count(r4300);
         CoreCompareCallback();
@@ -327,7 +327,7 @@ int r4300_read_aligned_dword(struct r4300_core* r4300, uint32_t address, uint64_
 {
 #ifdef COMPARE_CORE
     opc = 2;
-    if (*r4300_pc_struct(r4300) != NULL || (r4300->emumode == EMUMODE_DYNAREC))
+    if (*r4300_pc_struct(r4300) != NULL && *r4300_pc(r4300) != 0)
     {
         cp0_update_count(r4300);
         CoreCompareCallback();
@@ -368,7 +368,7 @@ int r4300_write_aligned_word(struct r4300_core* r4300, uint32_t address, uint32_
 {
 #ifdef COMPARE_CORE
     opc = 3;
-    if (*r4300_pc_struct(r4300) != NULL || (r4300->emumode == EMUMODE_DYNAREC))
+    if (*r4300_pc_struct(r4300) != NULL && *r4300_pc(r4300) != 0)
     {
         cp0_update_count(r4300);
         CoreCompareCallback();
@@ -398,7 +398,7 @@ int r4300_write_aligned_dword(struct r4300_core* r4300, uint32_t address, uint64
 {
 #ifdef COMPARE_CORE
     opc = 4;
-    if (*r4300_pc_struct(r4300) != NULL || (r4300->emumode == EMUMODE_DYNAREC))
+    if (*r4300_pc_struct(r4300) != NULL && *r4300_pc(r4300) != 0)
     {
         cp0_update_count(r4300);
         CoreCompareCallback();

@@ -991,7 +991,7 @@ extern unsigned int using_tlb;
 
       //TODO: remove replace_addr?
       if(var[j].addr != -1)
-        replace_addr(addr, INSTRUCTION.disp, sizeof(INSTRUCTION.disp), &var[j], op_str, sizeof(op_str));
+        replace_addr(addr, INSTRUCTION.disp, sizeof(intptr_t), &var[j], op_str, sizeof(op_str));
 
       //uint32_t k = 0;
       //while(var[k].addr != -1) {
