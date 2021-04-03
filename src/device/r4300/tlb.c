@@ -116,10 +116,10 @@ uint32_t virtual_to_physical_address(struct r4300_core* r4300, uint32_t address,
         else if ((tlb->LUT_r[addr]) && (w == 0))
         {
             assert((map&~WRITE_PROTECT) == (((uintptr_t)r4300->rdram->dram + (uintptr_t)((tlb->LUT_r[addr] & 0xFFFFF000) - 0x80000000) - (address & 0xFFFFF000)) >> 2));
-            if (map & WRITE_PROTECT)
+            /*if (map & WRITE_PROTECT)
             {
                 assert(tlb->LUT_w[addr] == 0);
-            }
+            }*/
         }
         else {
             assert(map < 0);
