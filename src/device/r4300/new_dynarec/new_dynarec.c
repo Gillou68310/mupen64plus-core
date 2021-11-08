@@ -5554,7 +5554,11 @@ static void alu_assemble(int i,struct regstat *i_regs)
           s1h=get_reg(i_regs->regmap,rs1[i]|64);
           s2l=get_reg(i_regs->regmap,rs2[i]);
           s2h=get_reg(i_regs->regmap,rs2[i]|64);
-          if(rs2[i]==0) // rx<r0
+          if((rs1[i]==0)&&(rs2[i]==0))
+          {
+            emit_zeroreg(t);
+          }
+          else if(rs2[i]==0) // rx<r0
           {
             assert(s1h>=0);
             if(opcode2[i]==0x2a) // SLT
@@ -5585,7 +5589,11 @@ static void alu_assemble(int i,struct regstat *i_regs)
         if(t>=0) {
           s1l=get_reg(i_regs->regmap,rs1[i]);
           s2l=get_reg(i_regs->regmap,rs2[i]);
-          if(rs2[i]==0) // rx<r0
+          if((rs1[i]==0)&&(rs2[i]==0))
+          {
+            emit_zeroreg(t);
+          }
+          else if(rs2[i]==0) // rx<r0
           {
             assert(s1l>=0);
             if(opcode2[i]==0x2a) // SLT
