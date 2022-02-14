@@ -4766,7 +4766,7 @@ static void do_cop1stub(int n)
     load_all_consts(regs[i].regmap_entry,regs[i].was32,regs[i].wasdirty,regs[i].wasconst,i);
     //if(i_regs!=&regs[i]) DebugMessage(M64MSG_VERBOSE, "oops: regs[i]=%x i_regs=%x",(int)&regs[i],(int)i_regs);
   }
-  wb_dirtys(i_regs->regmap_entry,i_regs->was32,i_regs->wasdirty);
+  wb_dirtys(i_regs->regmap_entry,i_regs->is32,i_regs->dirty);
 
   if(get_reg(i_regs->regmap,CCREG)<0) {
     emit_loadreg(CCREG,HOST_CCREG);
@@ -4865,7 +4865,7 @@ static void do_readstub(int n)
   emit_jeq(0);
 
   if(!ds) load_all_consts(regs[i].regmap_entry,regs[i].was32,regs[i].wasdirty,regs[i].wasconst,i);
-  wb_dirtys(i_regs->regmap_entry,i_regs->was32,i_regs->wasdirty);
+  wb_dirtys(i_regs->regmap_entry,i_regs->is32,i_regs->dirty);
 
   emit_jmp((intptr_t)&do_interrupt);
   set_jump_target(jaddr,(intptr_t)out);
@@ -4976,7 +4976,7 @@ static void inline_readstub(int type, int i, u_int addr_const, char addr, struct
     emit_jeq(0);
 
     if(!ds) load_all_consts(regs[i].regmap_entry,regs[i].was32,regs[i].wasdirty,regs[i].wasconst,i);
-    wb_dirtys(i_regs->regmap_entry,i_regs->was32,i_regs->wasdirty);
+    wb_dirtys(i_regs->regmap_entry,i_regs->is32,i_regs->dirty);
 
     emit_jmp((intptr_t)&do_interrupt);
     set_jump_target(jaddr,(intptr_t)out);
@@ -5089,7 +5089,7 @@ static void do_writestub(int n)
   emit_jeq(0);
 
   if(!ds) load_all_consts(regs[i].regmap_entry,regs[i].was32,regs[i].wasdirty,regs[i].wasconst,i);
-  wb_dirtys(i_regs->regmap_entry,i_regs->was32,i_regs->wasdirty);
+  wb_dirtys(i_regs->regmap_entry,i_regs->is32,i_regs->dirty);
 
   emit_jmp((intptr_t)&do_interrupt);
   set_jump_target(jaddr,(intptr_t)out);
@@ -5185,7 +5185,7 @@ static void inline_writestub(int type, int i, u_int addr_const, char addr, struc
     emit_jeq(0);
 
     if(!ds) load_all_consts(regs[i].regmap_entry,regs[i].was32,regs[i].wasdirty,regs[i].wasconst,i);
-    wb_dirtys(i_regs->regmap_entry,i_regs->was32,i_regs->wasdirty);
+    wb_dirtys(i_regs->regmap_entry,i_regs->is32,i_regs->dirty);
 
     emit_jmp((intptr_t)&do_interrupt);
     set_jump_target(jaddr,(intptr_t)out);
@@ -5274,7 +5274,7 @@ static void cop0_assemble(int i,struct regstat *i_regs)
       intptr_t jaddr=(intptr_t)out;
       emit_jeq(0);
       load_all_consts(regs[i].regmap_entry,regs[i].was32,regs[i].wasdirty,regs[i].wasconst,i);
-      wb_dirtys(i_regs->regmap_entry,i_regs->was32,i_regs->wasdirty);
+      wb_dirtys(i_regs->regmap_entry,i_regs->is32,i_regs->dirty);
       emit_jmp((intptr_t)&do_interrupt);
       set_jump_target(jaddr,(intptr_t)out);
     }
