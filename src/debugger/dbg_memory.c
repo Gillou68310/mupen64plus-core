@@ -360,14 +360,16 @@ uint32_t get_memory_flags(struct device* dev, uint32_t addr)
     {
         case M64P_MEM_NOMEM:
             if(dev->r4300.cp0.tlb.LUT_r[addr>>12])
-                flags = M64P_MEM_FLAG_READABLE | M64P_MEM_FLAG_WRITABLE_EMUONLY;
+                flags |= M64P_MEM_FLAG_READABLE;
+            if(dev->r4300.cp0.tlb.LUT_w[addr>>12])
+                flags |= M64P_MEM_FLAG_WRITABLE;
             break;
         case M64P_MEM_NOTHING:
             if (((addr >> 16) == 0x8801 || (addr >> 16 == 0xA801)) && addrlow == 0)
                 flags = M64P_MEM_FLAG_WRITABLE_EMUONLY; // for flashram command
             break;
         case M64P_MEM_RDRAM:
-            flags = M64P_MEM_FLAG_WRITABLE;
+            flags = M64P_MEM_FLAG_READABLE | M64P_MEM_FLAG_WRITABLE;
         case M64P_MEM_ROM:
             flags |= M64P_MEM_FLAG_READABLE;
             break;

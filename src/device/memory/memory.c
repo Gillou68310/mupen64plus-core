@@ -151,7 +151,10 @@ void deactivate_memory_break_write(struct memory* mem, uint32_t address)
 
 int get_memory_type(struct memory* mem, uint32_t address)
 {
-    return mem->memtype[address >> 16];
+    if ((address & UINT32_C(0xc0000000)) != UINT32_C(0x80000000))
+      return M64P_MEM_NOMEM;
+    else
+      return mem->memtype[(address & UINT32_C(0x1ffffffc)) >> 16];
 }
 #else
 void read_with_bp_checks(void* opaque, uint32_t address, uint32_t* value)
