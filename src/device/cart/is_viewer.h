@@ -27,11 +27,23 @@
 
 #define IS_BUFFER_SIZE 0x1000
 
+#ifdef COMPARE_CORE
+struct compare_data
+{
+    uint32_t tag;
+    uint32_t size;
+    uint64_t arg;
+};
+#endif
+
 struct is_viewer
 {
     char data[IS_BUFFER_SIZE];
     char output_buffer[IS_BUFFER_SIZE];
     uint32_t buffer_pos;
+#ifdef COMPARE_CORE
+    struct compare_data compare_data;
+#endif
 };
 
 void poweron_is_viewer(struct is_viewer* is_viewer);

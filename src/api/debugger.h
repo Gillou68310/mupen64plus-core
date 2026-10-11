@@ -42,6 +42,7 @@ extern int DebuggerCallbacksAreSet(void);
 extern void DebuggerCallback(eDbgCallbackType type, unsigned int param);
 extern void CoreCompareCallback(void);
 extern void CoreCompareDataSync(int length, void *ptr);
+extern void CoreCompareData(void *arg);
 
 #endif /* API_DEBUGGER_H */
 

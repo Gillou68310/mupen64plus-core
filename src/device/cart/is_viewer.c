@@ -20,6 +20,9 @@
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 #include "is_viewer.h"
+#ifdef COMPARE_CORE
+#include "api/debugger.h"
+#endif
 
 #define M64P_CORE_PROTOTYPES 1
 #include "api/callbacks.h"
@@ -36,6 +39,9 @@ void poweron_is_viewer(struct is_viewer* is_viewer)
     memset(is_viewer->data, 0, IS_BUFFER_SIZE);
     memset(is_viewer->output_buffer, 0, IS_BUFFER_SIZE);
     is_viewer->buffer_pos = 0;
+#ifdef COMPARE_CORE
+    memset(&is_viewer->compare_data, 0, sizeof(struct compare_data));
+#endif
 }
 
 void read_is_viewer(void* opaque, uint32_t address, uint32_t* value)
@@ -51,6 +57,27 @@ void write_is_viewer(void* opaque, uint32_t address, uint32_t value, uint32_t ma
     struct is_viewer* is_viewer = (struct is_viewer*)opaque;
     address &= IS_ADDR_MASK;
     uint32_t word = value & mask;
+
+#ifdef COMPARE_CORE
+    if (address == 0x0)
+    {
+        is_viewer->compare_data.tag = word;
+    }
+    else if (address == 0x4)
+    {
+        is_viewer->compare_data.size = word;
+    }
+    else if (address == 0x8)
+    {
+        is_viewer->compare_data.arg = (uint64_t)word<<32;
+    }
+    else if (address == 0xC)
+    {
+        is_viewer->compare_data.arg |= word;
+        CoreCompareData(&is_viewer->compare_data);
+    }
+    else
+#endif
     if (address == 0x14)
     {
         if (word > 0)

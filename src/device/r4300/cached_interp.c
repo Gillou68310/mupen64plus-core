@@ -232,7 +232,7 @@ void cached_interp_NOTCOMPILED(void)
 {
     DECLARE_R4300
     uint32_t *mem = fast_mem_access(r4300, r4300->cached_interp.blocks[*r4300_pc(r4300)>>12]->start);
-#ifdef DBG
+#if 0
     DebugMessage(M64MSG_INFO, "NOTCOMPILED: addr = %x ops = %lx", *r4300_pc(r4300), (long) (*r4300_pc_struct(r4300))->ops);
 #endif
 
@@ -767,7 +767,7 @@ void cached_interp_init_block(struct r4300_core* r4300, uint32_t address)
 
     length = get_block_length(b);
 
-#ifdef DBG
+#if 0
     DebugMessage(M64MSG_INFO, "init block %" PRIX32 " - %" PRIX32, b->start, b->end);
 #endif
 
@@ -893,7 +893,7 @@ void cached_interp_recompile_block(struct r4300_core* r4300, const uint32_t* iw,
         }
     }
 
-#ifdef DBG
+#if 0
     DebugMessage(M64MSG_INFO, "block recompiled (%" PRIX32 "-%" PRIX32 ")", func, block->start+i*4);
 #endif
 }

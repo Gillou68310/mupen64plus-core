@@ -49,6 +49,7 @@ static void (*callback_ui_vi)(void) = NULL;
 
 static void (*callback_core_compare)(unsigned int) = NULL;
 static void (*callback_core_data_sync)(int, void *) = NULL;
+static void (*callback_core_compare_data)(void *) = NULL;
 
 /* global Functions for use by the Core */
 
@@ -91,12 +92,19 @@ void CoreCompareDataSync(int length, void *ptr)
         (*callback_core_data_sync)(length, ptr);
 }
 
+void CoreCompareData(void *arg)
+{
+    if (callback_core_compare_data != NULL)
+        (*callback_core_compare_data)(arg);
+}
+
 /* exported functions for use by the front-end User Interface */
 
-EXPORT m64p_error CALL DebugSetCoreCompare(void (*dbg_core_compare)(unsigned int), void (*dbg_core_data_sync)(int, void *))
+EXPORT m64p_error CALL DebugSetCoreCompare(void (*dbg_core_compare)(unsigned int), void (*dbg_core_data_sync)(int, void *), void (*dbg_core_compare_data)(void *))
 {
     callback_core_compare = dbg_core_compare;
     callback_core_data_sync = dbg_core_data_sync;
+    callback_core_compare_data = dbg_core_compare_data;
     return M64ERR_SUCCESS;
 }
  

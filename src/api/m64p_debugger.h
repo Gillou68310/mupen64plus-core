@@ -49,9 +49,9 @@ EXPORT m64p_error CALL DebugSetCallbacks(void (*)(void), void (*)(unsigned int),
  * This function is called by the front-end to supply callback function pointers
  * for the Core Comparison feature.
  */
-typedef m64p_error (*ptr_DebugSetCoreCompare)(void (*)(unsigned int), void (*)(int, void *));
+typedef m64p_error (*ptr_DebugSetCoreCompare)(void (*)(unsigned int), void (*)(int, void *), void (*)(void *));
 #if defined(M64P_CORE_PROTOTYPES)
-EXPORT m64p_error CALL DebugSetCoreCompare(void (*)(unsigned int), void (*)(int, void *));
+EXPORT m64p_error CALL DebugSetCoreCompare(void (*)(unsigned int), void (*)(int, void *), void (*)(void *));
 #endif
 
 /* DebugSetRunState()
